@@ -1,0 +1,109 @@
+@import 'btn';
+
+body {
+    font-family: Merriweather, Georgia, 'Times New Roman', Times, serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.logo {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+.book-header--center {
+    display: inline-flex;
+    align-items: baseline;
+    padding: 4px 0;
+    
+    p {
+        margin: 0;
+    }
+
+    h1 {
+        font-weight: normal;
+        margin: 0;
+        padding: 0 8px;
+    }
+}
+
+.book__nav-btn#ctrlPrev,
+.book__nav-btn#ctrlNext {
+    @extend %btn;
+}
+
+.nav {
+    height: 100%;
+
+    &__btn {
+        @extend %btn;
+        border: none;
+        height: 100%;
+        font-size: 24px;
+        padding: 0 12px;
+        border-radius: 0;
+        
+        &:hover, &:focus {
+            box-shadow: none;
+            background-color: transparentize(black, 0.85);
+        }
+
+        &:active {
+            box-shadow: none;
+            background-color: transparentize(black, 0.7);
+        }
+    }
+}
+
+.book-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-container {
+    position: relative;
+    width: 100%;
+    max-width: calc(((100vh - 96px) / 800) * 1200);
+    box-shadow: 0 2px 6px 4px rgba(0,0,0, 0.2);
+    
+    &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: (400 / 600) * 100%; // Nook Screen Size
+    }
+    &::after{
+        display: block;
+        content: "";
+        width: 1px;
+        height: 95%;
+        background-color: rgba(0,0,0,0.4);
+        margin-left: -0.5px;
+        position: absolute;
+        left: 50%;
+        top: 2.5%;
+        bottom: 2.5%;
+        box-shadow: 0 0 6px 2px rgba(0,0,0,0.2);
+    }
+    
+    > div {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+footer {
+    text-align: center;
+}

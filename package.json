@@ -1,0 +1,39 @@
+{
+  "name": "epkit",
+  "version": "1.0.0",
+  "description": "A complete epub development kit",
+  "scripts": {
+    "dev": "npx gulp"
+  },
+  "bin": "script.js",
+  "files": [
+    "index.html",
+    "js/script.js",
+    "css/style.min.css",
+    "css/normalize.css"
+  ],
+  "keywords": [],
+  "author": "Binyamin Aron Green",
+  "license": "MIT",
+  "dependencies": {
+    "epubjs": "^0.3.85",
+    "minimalist": "^1.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.13.1",
+    "postcss-epub": "^3.0.1"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ]
+}

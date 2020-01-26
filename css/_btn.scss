@@ -1,0 +1,16 @@
+%btn {
+    border: 1px solid #222;
+    padding: 4px 8px;
+    background: transparent;
+    border-radius: 999px;
+    color: #222;
+    outline: none;
+    cursor: pointer;
+    
+    &:focus, &:hover {
+        box-shadow: 0 0 2px 3px transparentize(steelblue, 0.6);
+    }
+    &:active {
+        box-shadow: 0 0 2px 4px transparentize(steelblue, 0.6);
+    }
+}
