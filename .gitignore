@@ -7,3 +7,4 @@
 node_modules
 serve/book
 vendor/epubcheck
+/*.tgz
