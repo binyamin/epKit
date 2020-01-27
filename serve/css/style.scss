@@ -1,5 +1,7 @@
 @import 'btn';
 
+$availHeight: calc(100vh - 124px);
+
 body {
     font-family: Merriweather, Georgia, 'Times New Roman', Times, serif;
     height: 100vh;
@@ -8,25 +10,8 @@ body {
 }
 
 .book-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 8px;
-}
-
-.logo {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-    font-style: italic;
-}
-
-.book-header--center {
-    display: inline-flex;
-    align-items: baseline;
-    padding: 4px 0;
-    
-    p {
-        margin: 0;
-    }
+    padding: 16px 0;
+    text-align: center;
 
     h1 {
         font-weight: normal;
@@ -40,29 +25,6 @@ body {
     @extend %btn;
 }
 
-.nav {
-    height: 100%;
-
-    &__btn {
-        @extend %btn;
-        border: none;
-        height: 100%;
-        font-size: 24px;
-        padding: 0 12px;
-        border-radius: 0;
-        
-        &:hover, &:focus {
-            box-shadow: none;
-            background-color: transparentize(black, 0.85);
-        }
-
-        &:active {
-            box-shadow: none;
-            background-color: transparentize(black, 0.7);
-        }
-    }
-}
-
 .book-wrapper {
     flex-grow: 1;
     display: flex;
@@ -73,7 +35,7 @@ body {
 .book-container {
     position: relative;
     width: 100%;
-    max-width: calc(((100vh - 96px) / 800) * 1200);
+    max-width: calc((#{$availHeight} / 800) * 1200);
     box-shadow: 0 2px 6px 4px rgba(0,0,0, 0.2);
     
     &:before {
@@ -104,6 +66,8 @@ body {
         right: 0;
     }
 }
+
 footer {
     text-align: center;
+    padding: 8px;
 }

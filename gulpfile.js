@@ -6,7 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss')
 
 const css = cb => {
-    gulp.src('./css/style.scss')
+    gulp.src('./serve/css/style.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('style.min.css'))
@@ -16,21 +16,21 @@ const css = cb => {
         require('postcss-epub')({fonts: true})
     ]))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('./serve/css'))
     .pipe(browserSync.stream())
     cb();
 }
 
 const serve = cb => {
     browserSync.init({
-        server: "./",
+        server: "./serve",
         open: false,
         port: 8080
     })
     
-    gulp.watch('./css/**/*.scss', css);
-    gulp.watch('./**/*.html').on('change', browserSync.reload);
-    gulp.watch('./js/**/*.js').on('change', browserSync.reload);
+    gulp.watch('./serve/css/**/*.scss', css);
+    gulp.watch('./serve/**/*.html').on('change', browserSync.reload);
+    gulp.watch('./serve/js/**/*.js').on('change', browserSync.reload);
     cb();
 }
 
