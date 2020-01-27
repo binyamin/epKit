@@ -6,4 +6,4 @@
 /yarn.lock
 node_modules
 serve/book
-vendor/epubcheck*
+vendor/epubcheck

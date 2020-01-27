@@ -1,7 +1,7 @@
 {
   "name": "epkit",
   "description": "A complete epub development kit",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-beta",
   "author": "Binyamin Aron Green @b3u",
   "bin": {
     "epkit": "bin/index.js"
@@ -46,7 +46,8 @@
   "main": "lib/index.js",
   "repository": "b3u/epKit",
   "scripts": {
-    "postinstall": "node ./bin/postinstall.js",
+    "start:cli": "node ./bin/index.js",
+    "install": "node ./bin/postinstall.js",
     "dev": "npx gulp"
   }
 }
