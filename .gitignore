@@ -6,5 +6,6 @@
 /yarn.lock
 node_modules
 serve/book
+serve/book.epub
 vendor/epubcheck
 /*.tgz

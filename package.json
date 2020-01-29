@@ -15,11 +15,10 @@
     "url": "https://github.com/b3u/epKit/issues"
   },
   "dependencies": {
-    "adm-zip": "^0.4.13",
-    "archiver": "^3.1.1",
     "browser-sync": "^2.26.7",
     "commander": "^4.1.0",
-    "epubjs": "^0.3.85"
+    "epubjs": "^0.3.85",
+    "jszip": "^3.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",

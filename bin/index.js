@@ -29,7 +29,7 @@ program
     .action(function(dir) {
         try {
             lib.zip(dir).then(zip => {
-                console.log(`New epub file created at ${path.join(path.resolve(dir), '..', zip)}`)
+                // console.log(`New epub file created at ${path.join(path.resolve(dir), '..', zip)}`)
             })
         } catch(err) {
             console.error(err);
@@ -41,15 +41,13 @@ program
     .command('check <file>')
     .description('Validate an epub file according to IDPF specifications')
     .action(function(file){
-        try {
-            lib.check(file).then(response => {
-                console.log('Running epubcheck...');
-                response.pipe(process.stdout);
-            });
-        } catch(err) {
-            console.error(err);
+        console.log('Running epubcheck...\r\n');
+        lib.check(file).then(response => {
+            console.log(response)
+        }).catch(e => {
+            console.error(e);
             process.exit();
-        }
+        })
     })
 
 program.parse(process.argv);
